@@ -1,15 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import {newsClient, weatherClient} from '../../app/apiClients';
 
-
-const Business = () => {
-
+const GlobalNews = () => {
     const [localNews,setLocalNews] = useState(null);
     
     useEffect(() => {
-        newsClient.get('/latest_headlines', {
-          countries: 'ug',
-          topic: 'business',
+        newsClient.get('/search', {
+          //countries: 'ug',
+          q: 'business',
           //category: 'business',
           
         }).then((response)=>{
@@ -23,8 +21,8 @@ const Business = () => {
       if(!localNews) return null
   
   return (
-    <div>Business</div>
+    <div>GlobalNews</div>
   )
 }
 
-export default Business
+export default GlobalNews

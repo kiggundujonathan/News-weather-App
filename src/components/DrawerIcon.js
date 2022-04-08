@@ -10,7 +10,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useMediaQuery} from '@material-ui/core';
 import { createTheme,ThemeProvider } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import categories from '../data/categories';
+import { Link } from "react-router-dom";
+import "./DrawerIcon.css"
+
 
 
 const useStyles = makeStyles({
@@ -24,21 +26,21 @@ const useStyles = makeStyles({
     }
 })
 
-export default function SwipeableTemporaryDrawer( {setCategory} ) {
+export default function SwipeableTemporaryDrawer() {
    const classes = useStyles();
    const [state, setState] = React.useState({
        left: false
   });
-  const prefersDarkMode =useMediaQuery("(prefers-color-scheme: dark)");
-   const theme = React.useMemo(
-     ()=>
-     createTheme({
-       palette: {
-         type: prefersDarkMode ? "dark" : "light",
-       },
-     }),
-     [prefersDarkMode]
-   );
+  // const prefersDarkMode =useMediaQuery("(prefers-color-scheme: dark)");
+  //  const theme = React.useMemo(
+  //    ()=>
+  //    createTheme({
+  //      palette: {
+  //        type: prefersDarkMode ? "dark" : "light",
+  //      },
+  //    }),
+  //    [prefersDarkMode]
+  //  );
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -59,18 +61,36 @@ export default function SwipeableTemporaryDrawer( {setCategory} ) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        <ListItem>categories</ListItem>
-      </List>
-      <Divider/>
-      <List>
-        {categories.map((text, index) => (
+    
+      <div className="nav-items">
+      <ListItem><a href="/">Home</a></ListItem>
+        <ListItem><a href="/business">Business</a></ListItem>
+        <ListItem><a href="/local-news">local News</a></ListItem>
+        <ListItem><a href="/global-news">global</a></ListItem>
+        <ListItem><a href="/entertainment">entertainment</a></ListItem>
+
+        {['About Us' , 'Contact Us'].map((text, index) => (
+          <ListItem button key={text}>
+            
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </div>
+      {/* <List>
+        {["Local News",
+       "business",
+      "entertainment",
+      "global",
+       "health",
+      "science",
+      "sports",
+      "technology"].map((text, index) => (
           <ListItem style= {{
             height: 40,
             borderRadius: 3
           }} button 
           key={text} 
-          onClick = {()=>setCategory(text)}>
+          onClick = {()=>(text)}>
             
             <ListItemText primary={text} />
           </ListItem>
@@ -82,7 +102,7 @@ export default function SwipeableTemporaryDrawer( {setCategory} ) {
             <ListItemText primary={text} />
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </Box>
   );
 
@@ -94,7 +114,6 @@ export default function SwipeableTemporaryDrawer( {setCategory} ) {
               <MenuIcon/>
           </Button>
 
-          <ThemeProvider theme = {theme}>
           <SwipeableDrawer
             anchor={"left"}
             open={state["left"]}
@@ -103,7 +122,7 @@ export default function SwipeableTemporaryDrawer( {setCategory} ) {
           >
             {list("left")}
           </SwipeableDrawer>
-          </ThemeProvider>
+         
 
         </React.Fragment>
    

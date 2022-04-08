@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {newsClient, weatherClient} from '../../app/apiClients';
 
-
-const Business = () => {
-
+const LocalNews = () => {
     const [localNews,setLocalNews] = useState(null);
     
     useEffect(() => {
@@ -23,8 +21,8 @@ const Business = () => {
       if(!localNews) return null
   
   return (
-    <div>Business</div>
+    <div>LocalNews</div>
   )
 }
 
-export default Business
+export default LocalNews

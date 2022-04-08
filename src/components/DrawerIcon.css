@@ -1,0 +1,5 @@
+.nav-items:a{
+    list-style: none;
+    text-decoration: none;
+    text-transform: lowercase;
+}

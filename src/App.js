@@ -1,19 +1,18 @@
 
 import './App.css';
 import axios from 'axios'
-import { useState, useEffect } from 'react';
+import {useState, useEffect } from 'react';
 import NavMak from './components/NavMak';
-import Newscontent from "../src/components/NewsContent/Newscontent"
-import apikey from './data/config';
-import news from './data/news';
-import {API_KEY} from "./api-keys";
 import NewsCard from "./components/cards/NewsCard"
-import image from "./images/banner.jpg";
 import moment from "moment"
-// import getTopHeadlines from "./app/index";
-   
 import {newsClient, weatherClient} from './app/apiClients';
-import { Router } from '@material-ui/icons';
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Business from "./components/pages/Business";
+import LocalNews from './components/pages/LocalNews';
+import GlobalNews from './components/pages/GlobalNews';
+import Entertainment from './components/pages/Entertainment';
+import Home from './components/pages/Home';
+import Carousel from './components/carousel/Carousel';
 
 // get the top headlines.
 
@@ -34,30 +33,56 @@ function App() {
   // };
 
 
-    useEffect(() => {
-      newsClient.get('/latest_headlines', {
-        countries: 'ug',
-        //topic: 'business',
-        //category: 'business',
+    // useEffect(() => {
+    //   newsClient.get('/latest_headlines', {
+    //     countries: 'ug',
+    //     //q: 'world',
+    //     //category: 'business',
         
-      }).then((response)=>{
-        console.log(response.data.articles)
-        setLocalNews(response.data.articles)
-      })
+    //   }).then((response)=>{
+    //     console.log(response.data.articles)
+    //     setLocalNews(response.data.articles)
+    //   })
     
       
-    }, [])
+    // }, [])
 
-    if(!localNews) return null
+    // if(!localNews) return null
+
+
+    const slides = [
+      "https://picsum.photos/id/1032/900/400",
+      "https://picsum.photos/id/1033/900/400",
+      "https://picsum.photos/id/1037/900/400",
+      "https://picsum.photos/id/1035/900/400",
+      "https://picsum.photos/id/1036/900/400",
+    ]
 
 
   return (
     
     <div className="App">
-    
+     
       <NavMak/>
+      <div className="container">
+      <div className='carousel'>
+        <div className="carousel-inner"> 
+        { slides.map((slide, index) => (
+           <div className="carousel-item">
+          <Carousel
+           slides={slides}
+           interval={5000} 
+           controls={true} 
+          indicators={true}
+           />
+          </div> 
+        ))}       
+                
+        </div>
+      </div>
+    </div>
       <div className='news'>
-
+      
       {
     localNews?.map(
         (news)=>
@@ -75,7 +100,16 @@ function App() {
    
 }
       </div>
-
+      
+     <Router >
+       <Routes>
+       <Route path="/" element={<Home/>}/>
+         <Route path="/business" element={<Business/>}/>
+         <Route path="/local-news" element={<LocalNews/>}/>
+         <Route path="/global-news" element={<GlobalNews/>}/>
+         <Route path="/entertainment" element={<Entertainment/>}/>
+       </Routes>
+     </Router>
 
     </div>
     
