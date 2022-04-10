@@ -4,6 +4,15 @@ import CarouselControls from './CarouselControls';
 import CarouselIndicators from './CarouselIndicators';
 import "./Carousel.css";
 
+const slides = [
+  "https://picsum.photos/id/1032/900/400",
+  "https://picsum.photos/id/1033/900/400",
+  "https://picsum.photos/id/1037/900/400",
+  "https://picsum.photos/id/1035/900/400",
+  "https://picsum.photos/id/1036/900/400",
+]
+
+
 const Carousel = ({ slides, interval = 3000, controls = false, indicators = false, autoPlay = true}) => {
     const [currentSlide, setCurrentSlide] = useState(0)
 

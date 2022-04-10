@@ -6,7 +6,11 @@ a:active {
   color: inherit;
 }
 
-
+html, .App{
+  background-color:burlywood;
+  height: 100%;
+  
+}
 .news{
   display: flex;
   gap: 20px;

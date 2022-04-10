@@ -11,45 +11,19 @@ import Business from "./components/pages/Business";
 import LocalNews from './components/pages/LocalNews';
 import GlobalNews from './components/pages/GlobalNews';
 import Entertainment from './components/pages/Entertainment';
-import Home from './components/pages/Home';
+import SportsNews from './components/pages/SportsNews';
 import Carousel from './components/carousel/Carousel';
+import Politics from './components/pages/Politics';
+import Footer from './components/Footer'
+import SignUp from "./components/Footer"
 
-// get the top headlines.
 
 function App() {
   const [category, setCategory] = useState("general");
   const [newsArray,setNewsArray] = useState([]);
   const [localNews,setLocalNews] = useState(null);
 
-  // const getTopHeadlines = async () =>{
-  //   const newsResults = await newsClient.get('/latest_headlines', {
-  //     countries: 'ug',
-  //     //category: 'business',
-      
-  //   });
-  //    const news=newsResults.data
-  //    setLocalNews(news)
-  //   return newsResults.data;
-  // };
-
-
-    // useEffect(() => {
-    //   newsClient.get('/latest_headlines', {
-    //     countries: 'ug',
-    //     //q: 'world',
-    //     //category: 'business',
-        
-    //   }).then((response)=>{
-    //     console.log(response.data.articles)
-    //     setLocalNews(response.data.articles)
-    //   })
-    
-      
-    // }, [])
-
-    // if(!localNews) return null
-
-
+  
     const slides = [
       "https://picsum.photos/id/1032/900/400",
       "https://picsum.photos/id/1033/900/400",
@@ -81,7 +55,7 @@ function App() {
         </div>
       </div>
     </div>
-      <div className='news'>
+      {/* <div className='news'>
       
       {
     localNews?.map(
@@ -99,19 +73,27 @@ function App() {
     )
    
 }
-      </div>
+      </div> */}
       
      <Router >
        <Routes>
-       <Route path="/" element={<Home/>}/>
+       {/* <Route path="/" element={<Home/>}/> */}
          <Route path="/business" element={<Business/>}/>
-         <Route path="/local-news" element={<LocalNews/>}/>
+         <Route path="/" element={<LocalNews/>}/>
          <Route path="/global-news" element={<GlobalNews/>}/>
          <Route path="/entertainment" element={<Entertainment/>}/>
+         <Route path="/Sports" element={<SportsNews/>}/>
+         <Route path="/Politics" element={<Politics/>}/>
+         
        </Routes>
+       
      </Router>
+     
 
+     <Footer/>
+      
     </div>
+    
     
   );
 }

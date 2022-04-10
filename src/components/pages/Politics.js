@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import {newsClient, weatherClient} from '../../app/apiClients';
-import NewsCard from "../../components/cards/NewsCard";
+import NewsCard from "../cards/NewsCard";
 import moment from "moment";
 
-const LocalNews = () => {
+function Politics() {
     const [localNews,setLocalNews] = useState(null);
     
     useEffect(() => {
-        newsClient.get('/latest_headlines', {
-          countries: 'ug',
-          //topic: 'business',
+        newsClient.get('/search', {
+          //countries: 'ug',
+          q: 'politics',
           //category: 'business',
+          
         }).then((response)=>{
           console.log(response.data.articles)
           setLocalNews(response.data.articles)
@@ -35,7 +36,6 @@ const LocalNews = () => {
         author={news.author}
          time={moment(news.published_date).fromNow()}
       />
-
       
   )
  
@@ -44,4 +44,4 @@ const LocalNews = () => {
   )
 }
 
-export default LocalNews
+export default Politics

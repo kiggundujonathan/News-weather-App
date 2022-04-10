@@ -43,14 +43,14 @@ h3,p{
 }
 .btn button{
     padding: 0.5rem;
-    background-color: white;
+      background-color: burlywood;
     border: none;
     transform: 0.2s;
     margin-bottom: 0.5rem;
     border-radius: 3px;
 }
 .btn button:hover{
-    background-color: rgba(27, 156, 252, 0.1);
+    background-color: rgba(27, 156, 252, 0.1); 
 }
 a{
     text-transform: uppercase;

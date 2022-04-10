@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import {newsClient, weatherClient} from '../../app/apiClients';
+import NewsCard from "../../components/cards/NewsCard";
+import moment from "moment"
 
 const Entertainment = () => {
     const [localNews,setLocalNews] = useState(null);
     
     useEffect(() => {
-        newsClient.get('/latest_headlines', {
-          countries: 'ug',
-          topic: 'business',
+        newsClient.get('/search', {
+          //countries: 'ug',
+          q: 'Entertainment',
           //category: 'business',
           
         }).then((response)=>{
@@ -21,7 +23,27 @@ const Entertainment = () => {
       if(!localNews) return null
   
   return (
-    <div>Entertainment</div>
+
+    <div className='news'>
+      
+    {
+  localNews?.map(
+      (news)=>
+        <NewsCard
+        title={news.title}
+        SampleImage={news.media}
+        body ={news.summary}
+        link={news.link}
+        author={news.author}
+         time={moment(news.published_date).fromNow()}
+      />
+
+      
+  )
+ 
+}
+    </div>
+
   )
 }
 

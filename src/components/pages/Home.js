@@ -1,28 +1,46 @@
-import React, {useEffect, useState} from 'react'
-import {newsClient, weatherClient} from '../../app/apiClients';
+// import React, {useEffect, useState} from 'react'
+// import {newsClient, weatherClient} from '../../app/apiClients';
+// import NewsCard from "../../components/cards/NewsCard";
+// import moment from "moment"
 
-const Home = () => {
-    const [localNews,setLocalNews] = useState(null);
+// const Home = () => {
+//     const [localNews,setLocalNews] = useState(null);
     
-    useEffect(() => {
-        newsClient.get('/latest_headlines', {
-          countries: 'ug',
-          topic: 'business',
-          //category: 'business',
+//     useEffect(() => {
+//         newsClient.get('/latest_headlines', {
+//           countries: 'ug',
+//           //topic: 'business',
+//           //category: 'business',
           
-        }).then((response)=>{
-          console.log(response.data.articles)
-          setLocalNews(response.data.articles)
-        })
+//         }).then((response)=>{
+//           console.log(response.data.articles)
+//           setLocalNews(response.data.articles)
+//         })
       
         
-      }, [])
+//       }, [])
   
-      if(!localNews) return null
+//       if(!localNews) return null
   
-  return (
-    <div>Home</div>
-  )
-}
+//   return (
+//     <div className='news'>
+      
+//     {
+//   localNews?.map(
+//       (news)=>
+//         <NewsCard
+//         title={news.title}
+//         SampleImage={news.media}
+//         body ={news.summary}
+//         link={news.link}
+//         author={news.author}
+//          time={moment(news.published_date).fromNow()}
+//       />
+//   )
+ 
+// }
+//     </div>
+//   )
+// }
 
-export default Home
+// export default Home
