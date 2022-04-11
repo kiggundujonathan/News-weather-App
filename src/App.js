@@ -30,6 +30,7 @@ function App() {
       "https://picsum.photos/id/1037/900/400",
       "https://picsum.photos/id/1035/900/400",
       "https://picsum.photos/id/1036/900/400",
+      "SampleImage={news.media}",
     ]
 
 
@@ -55,7 +56,7 @@ function App() {
         </div>
       </div>
     </div>
-      {/* <div className='news'>
+      <div className='news'>
       
       {
     localNews?.map(
@@ -73,7 +74,7 @@ function App() {
     )
    
 }
-      </div> */}
+      </div> 
       
      <Router >
        <Routes>

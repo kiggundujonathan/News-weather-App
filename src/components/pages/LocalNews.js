@@ -9,7 +9,7 @@ const LocalNews = () => {
     useEffect(() => {
         newsClient.get('/latest_headlines', {
           countries: 'ug',
-          //topic: 'business',
+          topic: 'business',
           //category: 'business',
         }).then((response)=>{
           console.log(response.data.articles)

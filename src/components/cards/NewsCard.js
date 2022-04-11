@@ -13,7 +13,7 @@ export default function NewsCard({title,SampleImage,body,link,time,author}) {
     <div className="card-content">
        <div className="Newscard-title">
 
-      <h3>{title}</h3>
+      <h3>{title.length>20?`${title.substring(0,20)}...`:title}</h3>
 
         </div>
 
@@ -24,7 +24,6 @@ export default function NewsCard({title,SampleImage,body,link,time,author}) {
                    <p className=''>{time}</p>
                    <p className=''>{author}</p>
               </div>
-           
     </div>
 
     </div>

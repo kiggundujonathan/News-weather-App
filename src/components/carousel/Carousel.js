@@ -10,10 +10,11 @@ const slides = [
   "https://picsum.photos/id/1037/900/400",
   "https://picsum.photos/id/1035/900/400",
   "https://picsum.photos/id/1036/900/400",
+  
 ]
 
 
-const Carousel = ({ slides, interval = 3000, controls = false, indicators = false, autoPlay = true}) => {
+const Carousel = ({ slides, interval = 3000, controls = false, indicators = false, autoPlay = true,SampleImage}) => {
     const [currentSlide, setCurrentSlide] = useState(0)
 
     const switchIndex = (index) => {
