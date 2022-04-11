@@ -48,8 +48,6 @@ export default function SwipeableTemporaryDrawer() {
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
-      bgcolor="burlywood"
-      color="black"
       >
     
       <div className="nav-items" bgcolor= "burlywood">
