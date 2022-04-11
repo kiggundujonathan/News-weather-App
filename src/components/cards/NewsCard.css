@@ -44,6 +44,7 @@ p {
   transform: 0.2s;
   margin-bottom: 0.5rem;
   border-radius: 3px;
+  color:white;
 }
 .btn button:hover {
   background-color: rgba(27, 156, 252, 0.1);
