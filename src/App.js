@@ -15,6 +15,7 @@ import SportsNews from './components/pages/SportsNews';
 import Carou from './components/carousel/Carou';
 import Politics from './components/pages/Politics';
 import Footer from './components/Footer'
+import Weather from './components/pages/Weather';
 import SignUp from "./components/Footer"
 
 
@@ -61,6 +62,7 @@ function App() {
          <Route path="/entertainment" element={<Entertainment/>}/>
          <Route path="/Sports" element={<SportsNews/>}/>
          <Route path="/Politics" element={<Politics/>}/>
+         <Route path="/weather" element={<Weather/>}/>
          
        </Routes>
        

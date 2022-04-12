@@ -1,27 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
-import {newsClient} from '../../app/apiClients';
-import CarouItem from './CarouItem'
+
+
 
 
 const Carou = () => {
-    const [localNews,setLocalNews] = useState(null);
-
-    useEffect(() => {
-        newsClient.get('/latest_headlines', {
-          countries: 'ug',
-          topic: 'business',
-          //category: 'business',
-        }).then((response)=>{
-          console.log(response.data.articles)
-          setLocalNews(response.data.articles)
-        })
-      
-        
-      }, [])
-  
-      // if(!localNews) return null
 
   return (
     <div style={{ display: 'block', width: 1500, padding: 30, marginLeft:120 }}>

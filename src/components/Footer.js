@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Link } from '@material-ui/core'
 import React from 'react'
-import ListItem from '@material-ui/core/ListItem';
 
 export default function Footer() {
   return (
@@ -38,25 +37,6 @@ export default function Footer() {
           <Box>
               <Link href= "/" color = "inherit">
                   Privacy
-              </Link>
-          </Box>
-      </Grid>
-      <Grid item xs ={12} sm={4}  >
-          <Box borderBottom={1} >Contact</Box>
-          <Box>
-              <Link href= "/" color="inherit">
-                  Sign Up
-              </Link> 
-              
-          </Box>
-          <Box>
-              <Link href= "/" color = "inherit">
-                  Login 
-              </Link>
-          </Box>
-          <Box>
-              <Link href= "/" color = "inherit">
-                  Message
               </Link>
           </Box>
       </Grid>
