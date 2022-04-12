@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {newsClient, weatherClient} from '../../app/apiClients';
+import {newsClient} from '../../app/apiClients';
 import NewsCard from "../../components/cards/NewsCard";
 import moment from "moment";
 

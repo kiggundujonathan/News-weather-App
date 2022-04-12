@@ -1,4 +1,3 @@
-import { Divider } from '@material-ui/core';
 import React from 'react'
 import "./NewsCard.css";
 export default function NewsCard({title,SampleImage,body,link,time,author}) {

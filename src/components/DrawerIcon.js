@@ -3,25 +3,13 @@ import Box from '@material-ui/core/Box';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import ListItem from '@material-ui/core/ListItem';
-import { makeStyles, useMediaQuery} from '@material-ui/core';
-import { createTheme,ThemeProvider } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import "./DrawerIcon.css"
 
 
 
-const useStyles = makeStyles({
-    list:{
-        width: 250,
-        paddingLeft: 10,
-        paddingRight: 5,
-        
-    },
-    fullList:{
-        width: "auto",
-    }
-})
+
 
 export default function SwipeableTemporaryDrawer() {
    
@@ -51,7 +39,7 @@ export default function SwipeableTemporaryDrawer() {
       >
     
       <div className="nav-items" bgcolor= "burlywood">
-      {/* <ListItem><a href="/">Home</a></ListItem> */}
+
       <ListItem><a href="/">local News</a></ListItem>
       
        <ListItem><a href="/global-news">global</a></ListItem>
@@ -59,47 +47,7 @@ export default function SwipeableTemporaryDrawer() {
         <ListItem><a href="/Politics">Politics</a></ListItem>
         <ListItem><a href="/Sports">Sports</a></ListItem>
         <ListItem><a href="/entertainment">Entertainment</a></ListItem>
-         
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem> 
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>
-        <ListItem><a href="/entertainment"></a></ListItem>  
+        <ListItem><a href="/weather">Weather</a></ListItem>
 
       
       </div>
