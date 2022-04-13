@@ -35,7 +35,8 @@ const getLocation = () => {
     { weatherdata && <div className="information" style={{display: 'flex', justifyContent: 'space-between', flexDirection:'column', marginLeft:500}}>
        <h3 className="location" style={{padding:100, fontSize: 60}}>{weatherdata.location}</h3>
        <h3 classNmae="time"style={{padding:100,fontSize: 40}}>{weatherdata.time}</h3> 
-       <h3 className='info'style={{padding:100, fontSize: 40}}>{weatherdata.info}</h3>    
+       <h3 className='info'style={{padding:100, fontSize: 40}}>{weatherdata.info}</h3> 
+       <h3 className='temp'style={{padding:100, fontSize: 40}}>{weatherdata.weather} ° C</h3>    
     </div>  }
     </div>
   )
